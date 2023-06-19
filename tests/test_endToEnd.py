@@ -3,9 +3,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EO
 from selenium.webdriver.support.wait import WebDriverWait
 
+from utilities.BaseClass import BaseClass
 
-@pytest.mark.usefixtures("setup")
-class TestOne:
+
+class TestOne(BaseClass):
     def test_e2e(self):
 
         self.driver.find_element(By.CSS_SELECTOR, "a[href*='shop']").click()
