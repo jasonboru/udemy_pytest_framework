@@ -12,9 +12,8 @@ class TestOne(BaseClass):
     def test_e2e(self):
 
         homePage = HomePage(self.driver)
-        homePage.shopItems().click()
+        checkOutPage = homePage.shopItems()
 
-        checkOutPage = CheckOutPage(self.driver)
         cards = checkOutPage.getCardTitles()
         i = -1
         for card in cards:
