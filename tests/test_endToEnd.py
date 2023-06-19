@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EO
 from selenium.webdriver.support.wait import WebDriverWait
 
+from pageOjects.CheckoutPage import CheckOutPage
 from pageOjects.HomePage import HomePage
 from utilities.BaseClass import BaseClass
 
@@ -13,20 +14,16 @@ class TestOne(BaseClass):
         homePage = HomePage(self.driver)
         homePage.shopItems().click()
 
+        checkOutPage = CheckOutPage(self.driver)
+        cards = checkOutPage.getCardTitles()
+        i = -1
+        for card in cards:
+            cardText = card.text
+            print(cardText)
+            if cardText == "Blackberry":
+                checkOutPage.getCardFooters()[i].click()
 
-        results = self.driver.find_elements(By.XPATH, "//div[@class='card h-100']")
-        count = len(results)
-        print(count)
-
-        for result in results:
-            product = result.find_element(By.XPATH, "div/h4/a").text
-            print(product)
-            if product == "Blackberry":
-                result.find_element(By.XPATH, "div/button").click()
-            # the result object already contains //div[@class='products']/div from line 19
-            # this process chains off the elements adding the child to Parent XPATH
-
-        self.driver.find_element(By.CSS_SELECTOR, ".nav-link.btn.btn-primary").click()
+        checkOutPage.clickToCart().click()
 
         self.driver.find_element(By.CSS_SELECTOR, ".btn.btn-success").click()
 
