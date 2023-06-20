@@ -35,13 +35,16 @@ class TestOne(BaseClass):
         wait = WebDriverWait(self.driver, 10)
         wait.until(EO.presence_of_element_located((By.LINK_TEXT, "India")))
 
-        self.driver.find_element(By.LINK_TEXT, "India").click()
+        # self.driver.find_element(By.LINK_TEXT, "India").click()
+        confirmPage.pickIndia().click()
+        # self.driver.find_element(By.XPATH, "//div[@class='checkbox checkbox-primary']").click()
+        confirmPage.agreeTC().click()
 
-        self.driver.find_element(By.XPATH, "//div[@class='checkbox checkbox-primary']").click()
+        # self.driver.find_element(By.XPATH, "//input[@value='Purchase']").click()
+        confirmPage.finalPurchase().click()
 
-        self.driver.find_element(By.XPATH, "//input[@value='Purchase']").click()
-
-        successText = self.driver.find_element(By.CSS_SELECTOR, ".alert-success").text
+        # successText = self.driver.find_element(By.CSS_SELECTOR, ".alert-success").text
+        successText = confirmPage.confirmSuccess().text
 
         assert "Success" in successText
 
