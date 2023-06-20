@@ -1,6 +1,7 @@
 import pytest
 from selenium.webdriver.common.by import By
 
+from TestData.HomePageData import HomePageData
 from pageOjects.HomePage import HomePage
 from utilities.BaseClass import BaseClass
 from selenium.webdriver.support.ui import Select
@@ -23,8 +24,7 @@ class TestHomePage(BaseClass):
         assert ("Success" in alertMessage)
         self.driver.refresh()
 
-    @pytest.fixture(params=[{"name": "Jason Boru", "email": "jasonboru@gmail.com", "password": "Password1234", "gender": "Male", "bday": "01171978"},
-                            {"name": "Nola Pearl", "email": "noladog@gmail.com", "password": "PasswordB@rk", "gender": "Female", "bday": "09152021"}])
+    @pytest.fixture(params=HomePageData.test_HomePage_data)
     def getData(self, request):
         return request.param
 
