@@ -32,9 +32,9 @@ class TestOne(BaseClass):
         confirmPage = ConfirmPage(self.driver)
         confirmPage.getCountry().send_keys("ind")
 
-        wait = WebDriverWait(self.driver, 10)
-        wait.until(EO.presence_of_element_located((By.LINK_TEXT, "India")))
-
+        # wait = WebDriverWait(self.driver, 10)
+        # wait.until(EO.presence_of_element_located((By.LINK_TEXT, "India")))
+        self.verify_link_presence("India")
         # self.driver.find_element(By.LINK_TEXT, "India").click()
         confirmPage.pickIndia().click()
         # self.driver.find_element(By.XPATH, "//div[@class='checkbox checkbox-primary']").click()
