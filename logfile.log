@@ -12,3 +12,31 @@ Success! The Form has been submitted successfully!.
 2023-06-20 16:11:47,152 : INFO : test_e2e : entering country name as 'ind'
 2023-06-20 16:11:52,694 : INFO : test_e2e : Text received from application is: ×
 Success! Thank you! Your order will be delivered in next few weeks :-).
+2023-06-20 16:27:02,425 : INFO : test_formSubmission : ×
+Success! The Form has been submitted successfully!.
+2023-06-20 16:27:03,303 : INFO : test_formSubmission : ×
+Success! The Form has been submitted successfully!.
+2023-06-20 16:27:03,303 : INFO : test_formSubmission : ×
+Success! The Form has been submitted successfully!.
+2023-06-20 16:27:09,330 : INFO : test_e2e : getting all the card titles
+2023-06-20 16:27:09,356 : INFO : test_e2e : iphone X
+2023-06-20 16:27:09,365 : INFO : test_e2e : Samsung Note 8
+2023-06-20 16:27:09,373 : INFO : test_e2e : Nokia Edge
+2023-06-20 16:27:09,381 : INFO : test_e2e : Blackberry
+2023-06-20 16:27:09,572 : INFO : test_e2e : entering country name as 'ind'
+2023-06-20 16:27:15,103 : INFO : test_e2e : Text received from application is: ×
+Success! Thank you! Your order will be delivered in next few weeks :-).
+2023-06-20 17:30:54,801 : INFO : test_formSubmission : ×
+Success! The Form has been submitted successfully!.
+2023-06-20 17:30:55,691 : INFO : test_formSubmission : ×
+Success! The Form has been submitted successfully!.
+2023-06-20 17:30:55,691 : INFO : test_formSubmission : ×
+Success! The Form has been submitted successfully!.
+2023-06-20 17:31:01,967 : INFO : test_e2e : getting all the card titles
+2023-06-20 17:31:01,994 : INFO : test_e2e : iphone X
+2023-06-20 17:31:02,003 : INFO : test_e2e : Samsung Note 8
+2023-06-20 17:31:02,011 : INFO : test_e2e : Nokia Edge
+2023-06-20 17:31:02,018 : INFO : test_e2e : Blackberry
+2023-06-20 17:31:02,209 : INFO : test_e2e : entering country name as 'ind'
+2023-06-20 17:31:07,747 : INFO : test_e2e : Text received from application is: ×
+Success! Thank you! Your order will be delivered in next few weeks :-).

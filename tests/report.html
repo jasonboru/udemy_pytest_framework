@@ -253,10 +253,10 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 20-Jun-2023 at 17:21:59 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <p>Report generated on 20-Jun-2023 at 17:28:19 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
     <h2>Summary</h2>
-    <p>3 tests ran in 18.33 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">3 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>3 tests ran in 18.20 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">2 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -267,11 +267,28 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <th class="sortable links" col="links">Links</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="4">No results found. Try to check the filters</th></tr></thead>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">test_endToEnd.py::TestOne::test_e2e</td>
+          <td class="col-duration">11.47</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div><div><img src="test_endToEnd.py_TestOne_test_e2e.png" alt="screenshot" style="width:304px;height:228px;" onclick="window.open(this.src)" align="right"/></div></div>
+            <div class="log">self = &lt;tests.test_endToEnd.TestOne object at 0x10d74cfd0&gt;<br/><br/>    def test_e2e(self):<br/>    <br/>        log = self.getLogger()<br/>    <br/>        homePage = HomePage(self.driver)<br/>        checkOutPage = homePage.shopItems()<br/>    <br/>        log.info(&quot;getting all the card titles&quot;)<br/>        cards = checkOutPage.getCardTitles()<br/>        i = -1<br/>        for card in cards:<br/>            cardText = card.text<br/>            log.info(cardText)<br/>            if cardText == &quot;Blackberry&quot;:<br/>                checkOutPage.getCardFooters()[i].click()<br/>    <br/>        checkOutPage.clickToCart().click()<br/>    <br/>        # self.driver.find_element(By.CSS_SELECTOR, &quot;.btn.btn-success&quot;).click()<br/>        checkOutPage.checkoutCart().click( )<br/>    <br/>        # self.driver.find_element(By.ID, &#x27;country&#x27;).send_keys(&quot;ind&quot;)<br/>        confirmPage = ConfirmPage(self.driver)<br/>        log.info(&quot;entering country name as &#x27;ind&#x27;&quot;)<br/>        confirmPage.getCountry().send_keys(&quot;ind&quot;)<br/>    <br/>        # wait = WebDriverWait(self.driver, 10)<br/>        # wait.until(EO.presence_of_element_located((By.LINK_TEXT, &quot;India&quot;)))<br/>        self.verify_link_presence(&quot;India&quot;)<br/>        # self.driver.find_element(By.LINK_TEXT, &quot;India&quot;).click()<br/>        confirmPage.pickIndia().click()<br/>        # self.driver.find_element(By.XPATH, &quot;//div[@class=&#x27;checkbox checkbox-primary&#x27;]&quot;).click()<br/>        confirmPage.agreeTC().click()<br/>    <br/>        # self.driver.find_element(By.XPATH, &quot;//input[@value=&#x27;Purchase&#x27;]&quot;).click()<br/>        confirmPage.finalPurchase().click()<br/>    <br/>        # successText = self.driver.find_element(By.CSS_SELECTOR, &quot;.alert-success&quot;).text<br/>        successText = confirmPage.confirmSuccess().text<br/>        log.info(&quot;Text received from application is: &quot; + successText)<br/>    <br/>&gt;       assert &quot;Spuccess&quot; in successText<br/><span class="error">E       AssertionError: assert &#x27;Spuccess&#x27; in &#x27;×\nSuccess! Thank you! Your order will be delivered in next few weeks :-).&#x27;</span><br/><br/>test_endToEnd.py:54: AssertionError<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     test_e2e:test_endToEnd.py:20 getting all the card titles
+INFO     test_e2e:test_endToEnd.py:25 iphone X
+INFO     test_e2e:test_endToEnd.py:25 Samsung Note 8
+INFO     test_e2e:test_endToEnd.py:25 Nokia Edge
+INFO     test_e2e:test_endToEnd.py:25 Blackberry
+INFO     test_e2e:test_endToEnd.py:36 entering country name as &#x27;ind&#x27;
+INFO     test_e2e:test_endToEnd.py:52 Text received from application is: ×
+Success! Thank you! Your order will be delivered in next few weeks :-).<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_HomePage.py::TestHomePage::test_formSubmission[getData0]</td>
-          <td class="col-duration">5.71</td>
+          <td class="col-duration">5.44</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
@@ -281,25 +298,9 @@ Success! The Form has been submitted successfully!.<br/></div></td></tr></tbody>
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">test_HomePage.py::TestHomePage::test_formSubmission[getData1]</td>
-          <td class="col-duration">0.98</td>
+          <td class="col-duration">0.88</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_formSubmission:test_HomePage.py:26 ×
-Success! The Form has been submitted successfully!.<br/></div></td></tr></tbody>
-      <tbody class="passed results-table-row">
-        <tr>
-          <td class="col-result">Passed</td>
-          <td class="col-name">test_endToEnd.py::TestOne::test_e2e</td>
-          <td class="col-duration">11.59</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_e2e:test_endToEnd.py:20 getting all the card titles
-INFO     test_e2e:test_endToEnd.py:25 iphone X
-INFO     test_e2e:test_endToEnd.py:25 Samsung Note 8
-INFO     test_e2e:test_endToEnd.py:25 Nokia Edge
-INFO     test_e2e:test_endToEnd.py:25 Blackberry
-INFO     test_e2e:test_endToEnd.py:36 entering country name as &#x27;ind&#x27;
-INFO     test_e2e:test_endToEnd.py:52 Text received from application is: ×
-Success! Thank you! Your order will be delivered in next few weeks :-).<br/></div></td></tr></tbody></table></body></html>
+Success! The Form has been submitted successfully!.<br/></div></td></tr></tbody></table></body></html>
