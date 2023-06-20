@@ -4,6 +4,7 @@ from selenium.webdriver.support import expected_conditions as EO
 from selenium.webdriver.support.wait import WebDriverWait
 
 from pageOjects.CheckoutPage import CheckOutPage
+from pageOjects.ConfirmPage import ConfirmPage
 from pageOjects.HomePage import HomePage
 from utilities.BaseClass import BaseClass
 
@@ -24,9 +25,13 @@ class TestOne(BaseClass):
 
         checkOutPage.clickToCart().click()
 
-        self.driver.find_element(By.CSS_SELECTOR, ".btn.btn-success").click()
+        # self.driver.find_element(By.CSS_SELECTOR, ".btn.btn-success").click()
+        checkOutPage.checkoutCart().click( )
 
-        self.driver.find_element(By.ID, 'country').send_keys("ind")
+        # self.driver.find_element(By.ID, 'country').send_keys("ind")
+        confirmPage = ConfirmPage(self.driver)
+        confirmPage.getCountry().send_keys("ind")
+
         wait = WebDriverWait(self.driver, 10)
         wait.until(EO.presence_of_element_located((By.LINK_TEXT, "India")))
 

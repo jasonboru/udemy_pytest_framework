@@ -8,7 +8,8 @@ class CheckOutPage:
 
     cardTitle = (By.CSS_SELECTOR, ".card-title a")
     cardFooter = (By.CSS_SELECTOR, ".card-footer button")
-    checkoutButton = (By.CSS_SELECTOR, ".nav-link.btn.btn-primary")
+    cartButton = (By.CSS_SELECTOR, ".nav-link.btn.btn-primary")
+    checkoutButton = (By.CSS_SELECTOR, ".btn.btn-success")
 
     def getCardTitles(self):
         return self.driver.find_elements(*CheckOutPage.cardTitle)
@@ -17,4 +18,7 @@ class CheckOutPage:
         return self.driver.find_elements(*CheckOutPage.cardFooter)
 
     def clickToCart(self):
+        return self.driver.find_element(*CheckOutPage.cartButton)
+
+    def checkoutCart(self):
         return self.driver.find_element(*CheckOutPage.checkoutButton)
