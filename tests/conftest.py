@@ -35,6 +35,6 @@ def setup(request):
     driver.get("https://rahulshettyacademy.com/angularpractice/")
     request.cls.driver = driver
 
-    # yield
+    yield
 
-    # driver.close()
+    driver.close()
