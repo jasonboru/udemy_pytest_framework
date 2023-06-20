@@ -14,7 +14,7 @@ class TestHomePage(BaseClass):
         homePage.getEmail().send_keys("jasonboru@gmail.com")
         homePage.getPassword().send_keys("Password1234")
         homePage.getCheckbox().click()
-        homePage.getGender()
+        self.select_option_from_text(homePage.getGender(), "Male")
         homePage.getEmpStatus().click()
         homePage.getBirthday().send_keys("01171978")
         homePage.submitForm().click()

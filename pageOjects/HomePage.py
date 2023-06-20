@@ -39,9 +39,10 @@ class HomePage:
         return self.driver.find_element(*HomePage.checkbox)
 
     def getGender(self):
-        element = self.driver.find_element(*HomePage.dropdown)
-        drp = Select(element)
-        drp.select_by_visible_text("Male")
+        return self.driver.find_element(*HomePage.dropdown)
+    #     element = self.driver.find_element(*HomePage.dropdown)
+    #     drp = Select(element)
+    #     drp.select_by_visible_text("Male")
 
     def getEmpStatus(self):
         return self.driver.find_element(*HomePage.radiobutton)
