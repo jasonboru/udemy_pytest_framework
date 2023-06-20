@@ -14,10 +14,11 @@ class HomePage:
     email = (By.CSS_SELECTOR, "[name='email']")
     password = (By.ID, "exampleInputPassword1")
     checkbox = (By.ID, "exampleCheck1")
-    # dropdown = (By.ID, "exampleFormControlSelect1")
-    # radiobutton =
-    # DoB =
-    # subbmit =
+    dropdown = (By.ID, "exampleFormControlSelect1")
+    radiobutton = (By.ID, "inlineRadio2")
+    DoB = (By.NAME, "bday")
+    submit = (By.CSS_SELECTOR, "input[value='Submit']")
+    successMessage = (By.CSS_SELECTOR, "[class*='alert-success']")
 
     def shopItems(self):
         self.driver.find_element(*HomePage.shop).click()
@@ -37,9 +38,20 @@ class HomePage:
     def getCheckbox(self):
         return self.driver.find_element(*HomePage.checkbox)
 
-    # def getGender(self):
-    #     return self.driver.find_element(*HomePage.gender)
-    #
-    # def submitForm(self):
-    #     return self.driver.find_element(*HomePage.submit)
+    def getGender(self):
+        element = self.driver.find_element(*HomePage.dropdown)
+        drp = Select(element)
+        drp.select_by_visible_text("Male")
+
+    def getEmpStatus(self):
+        return self.driver.find_element(*HomePage.radiobutton)
+
+    def getBirthday(self):
+        return self.driver.find_element(*HomePage.DoB)
+
+    def submitForm(self):
+        return self.driver.find_element(*HomePage.submit)
+
+    def getSuccessMessage(self):
+        return self.driver.find_element(*HomePage.successMessage)
 
