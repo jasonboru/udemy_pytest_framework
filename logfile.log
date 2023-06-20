@@ -1,0 +1,14 @@
+2023-06-20 16:11:39,903 : INFO : test_formSubmission : ×
+Success! The Form has been submitted successfully!.
+2023-06-20 16:11:40,888 : INFO : test_formSubmission : ×
+Success! The Form has been submitted successfully!.
+2023-06-20 16:11:40,888 : INFO : test_formSubmission : ×
+Success! The Form has been submitted successfully!.
+2023-06-20 16:11:46,947 : INFO : test_e2e : getting all the card titles
+2023-06-20 16:11:46,969 : INFO : test_e2e : iphone X
+2023-06-20 16:11:46,976 : INFO : test_e2e : Samsung Note 8
+2023-06-20 16:11:46,983 : INFO : test_e2e : Nokia Edge
+2023-06-20 16:11:46,989 : INFO : test_e2e : Blackberry
+2023-06-20 16:11:47,152 : INFO : test_e2e : entering country name as 'ind'
+2023-06-20 16:11:52,694 : INFO : test_e2e : Text received from application is: ×
+Success! Thank you! Your order will be delivered in next few weeks :-).

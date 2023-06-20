@@ -12,14 +12,17 @@ from utilities.BaseClass import BaseClass
 class TestOne(BaseClass):
     def test_e2e(self):
 
+        log = self.getLogger()
+
         homePage = HomePage(self.driver)
         checkOutPage = homePage.shopItems()
 
+        log.info("getting all the card titles")
         cards = checkOutPage.getCardTitles()
         i = -1
         for card in cards:
             cardText = card.text
-            print(cardText)
+            log.info(cardText)
             if cardText == "Blackberry":
                 checkOutPage.getCardFooters()[i].click()
 
@@ -30,6 +33,7 @@ class TestOne(BaseClass):
 
         # self.driver.find_element(By.ID, 'country').send_keys("ind")
         confirmPage = ConfirmPage(self.driver)
+        log.info("entering country name as 'ind'")
         confirmPage.getCountry().send_keys("ind")
 
         # wait = WebDriverWait(self.driver, 10)
@@ -45,6 +49,7 @@ class TestOne(BaseClass):
 
         # successText = self.driver.find_element(By.CSS_SELECTOR, ".alert-success").text
         successText = confirmPage.confirmSuccess().text
+        log.info("Text received from application is: " + successText)
 
         assert "Success" in successText
 

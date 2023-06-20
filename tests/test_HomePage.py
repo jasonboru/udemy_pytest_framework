@@ -11,6 +11,8 @@ class TestHomePage(BaseClass):
 
     def test_formSubmission(self, getData):
 
+        log = self.getLogger()
+
         homePage = HomePage(self.driver)
         homePage.getName().send_keys(getData["name"])
         homePage.getEmail().send_keys(getData["email"])
@@ -21,6 +23,7 @@ class TestHomePage(BaseClass):
         homePage.getBirthday().send_keys(getData["bday"])
         homePage.submitForm().click()
         alertMessage = homePage.getSuccessMessage().text
+        log.info(alertMessage)
         assert ("Success" in alertMessage)
         self.driver.refresh()
 
